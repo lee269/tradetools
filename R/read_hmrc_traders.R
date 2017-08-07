@@ -1,12 +1,18 @@
 #' Read an HMRC traders file
 #'
+#' Converts a standard HMRC exporter or importer file to long form for further
+#' processing or analysis.
+#'
 #' @param file An HMRC tab delimited traders file
 #'
-#' @return
-#' @export
+#' @return A data frame of trader data in long form
 #'
 #' @examples
+#' data <- read_hmrc_traders("traderfile.tsv")
+#' head(data)
+#'
 #' @importFrom magrittr "%>%"
+#' @export
 read_hmrc_traders <- function(file) {
 
   # library(readr)

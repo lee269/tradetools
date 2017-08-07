@@ -1,7 +1,7 @@
 #' Download and extract files from a URL zipfile
 #'
-#' Downloads a zipfile from a specific URL and extracts all of its contents into
-#' a specified folder
+#' \code{get_zip_file} downloads a zipfile from a specific URL and extracts all
+#' of its contents into a specified folder.
 #'
 #'
 #'
@@ -9,9 +9,16 @@
 #' @param extractdir Folder to unzip to
 #'
 #' @return The contents of the zipfile are extracted into \code{extractdir}
-#' @export
 #'
 #' @examples
+#' zipfile <- "https://www.uktradeinfo.com/Statistics/Documents/exporters_2016archive_JulDec.zip"
+#' dir <- "~/temp"
+#' get_zip_file(zipfile, dir)
+#'
+#' \dontrun{
+#' get_zip_file("myfile.zip")
+#' }
+#' @export
 get_zip_file <- function(url, extractdir) {
 
   # add code to screen urls which are not .zips
@@ -32,10 +39,14 @@ get_zip_file <- function(url, extractdir) {
 #'
 #' @param extractdir folder containing exporter files
 #'
-#' @return
-#' @export
+#' @return The contens of \code{extractdir} are renamed as .tsv files. Any .zip
+#'   files in the folder are deleted.
 #'
 #' @examples
+#' unzip_and_cleanup("~/temp")
+#'
+#'
+#' @export
 unzip_and_cleanup <- function(extractdir) {
 
   # Clean up: delete the zipfiles
@@ -72,10 +83,15 @@ unzip_and_cleanup <- function(extractdir) {
 #'
 #' @param names A vector of strings
 #'
-#' @return
-#' @export
+#' @return A vector of strings with punctuation and spaces removed, and replaced
+#'   with underscores
 #'
 #' @examples
+#' x <- c("Isabella", "Andrew", "Graham", "Leigh")
+#' y <- c(10, 25, 19, 36)
+#' df <- data.frame( "First Name" = x, "High score! in 2018" = y)
+#' colnames(df) <- safe_names(colnames(df))
+#' @export
 safe_names = function(names) {
 
   names = gsub('[^a-z0-9]+','_',tolower(names))

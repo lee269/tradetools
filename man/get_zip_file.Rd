@@ -15,6 +15,15 @@ get_zip_file(url, extractdir)
 The contents of the zipfile are extracted into \code{extractdir}
 }
 \description{
-Downloads a zipfile from a specific URL and extracts all of its contents into
-a specified folder
+\code{get_zip_file} downloads a zipfile from a specific URL and extracts all
+of its contents into a specified folder.
+}
+\examples{
+zipfile <- "https://www.uktradeinfo.com/Statistics/Documents/exporters_2016archive_JulDec.zip"
+dir <- "~/temp"
+get_zip_file(zipfile, dir)
+
+\dontrun{
+get_zip_file("myfile.zip")
+}
 }

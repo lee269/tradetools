@@ -9,6 +9,15 @@ read_hmrc_traders(file)
 \arguments{
 \item{file}{An HMRC tab delimited traders file}
 }
+\value{
+A data frame of trader data in long form
+}
 \description{
-Read an HMRC traders file
+Converts a standard HMRC exporter or importer file to long form for further
+processing or analysis.
+}
+\examples{
+data <- read_hmrc_traders("traderfile.tsv")
+head(data)
+
 }

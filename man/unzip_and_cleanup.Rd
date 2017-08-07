@@ -9,7 +9,16 @@ unzip_and_cleanup(extractdir)
 \arguments{
 \item{extractdir}{folder containing exporter files}
 }
+\value{
+The contens of \code{extractdir} are renamed as .tsv files. Any .zip
+  files in the folder are deleted.
+}
 \description{
 Unzips all zipfiles in a folder and removes the zipfiles. Tidies the
 filenames of HMRC exporter details by changing ..txt suffixes to .tsv
+}
+\examples{
+unzip_and_cleanup("~/temp")
+
+
 }
