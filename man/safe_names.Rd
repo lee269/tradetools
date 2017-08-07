@@ -7,7 +7,7 @@
 safe_names(names)
 }
 \arguments{
-\item{names}{}
+\item{names}{A vector of strings}
 }
 \description{
 Removes odd characters from field names and makes them lower case. Converts

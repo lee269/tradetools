@@ -11,6 +11,9 @@ get_zip_file(url, extractdir)
 
 \item{extractdir}{Folder to unzip to}
 }
+\value{
+The contents of the zipfile are extracted into \code{extractdir}
+}
 \description{
 Downloads a zipfile from a specific URL and extracts all of its contents into
 a specified folder
