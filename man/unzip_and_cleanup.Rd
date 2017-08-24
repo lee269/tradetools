@@ -2,7 +2,7 @@
 % Please edit documentation in R/utilities.R
 \name{unzip_and_cleanup}
 \alias{unzip_and_cleanup}
-\title{Tidy up HMRC exporter files}
+\title{Tidy up HMRC data files}
 \usage{
 unzip_and_cleanup(extractdir)
 }
@@ -10,12 +10,17 @@ unzip_and_cleanup(extractdir)
 \item{extractdir}{folder containing exporter files}
 }
 \value{
-The contens of \code{extractdir} are renamed as .tsv files. Any .zip
-  files in the folder are deleted.
+The contents of \code{extractdir} are renamed as appropriate.
+Any .zip files in the folder are deleted.
 }
 \description{
-Unzips all zipfiles in a folder and removes the zipfiles. Tidies the
-filenames of HMRC exporter details by changing ..txt suffixes to .tsv
+Unzips all zipfiles in a folder and removes the zipfiles. Tidies up
+the filenames of the downloads.
+}
+\details{
+All files are set to lower case. HMRC trader details files have
+..txt suffixes changed to .tsv. Inconsistent filenames in
+February 2009 and May/June 2014 data are fixed.
 }
 \examples{
 unzip_and_cleanup("~/temp")

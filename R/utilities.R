@@ -32,15 +32,19 @@ get_zip_file <- function(url, extractdir) {
 
 }
 
-#' Tidy up HMRC exporter files
+#' Tidy up HMRC data files
 #'
-#' Unzips all zipfiles in a folder and removes the zipfiles. Tidies the
-#' filenames of HMRC exporter details by changing ..txt suffixes to .tsv
+#' Unzips all zipfiles in a folder and removes the zipfiles. Tidies up
+#' the filenames of the downloads.
+#'
+#' All files are set to lower case. HMRC trader details files have
+#' ..txt suffixes changed to .tsv. Inconsistent filenames in
+#' February 2009 and May/June 2014 data are fixed.
 #'
 #' @param extractdir folder containing exporter files
 #'
-#' @return The contens of \code{extractdir} are renamed as .tsv files. Any .zip
-#'   files in the folder are deleted.
+#' @return The contents of \code{extractdir} are renamed as appropriate.
+#' Any .zip files in the folder are deleted.
 #'
 #' @examples
 #' unzip_and_cleanup("~/temp")
@@ -58,17 +62,36 @@ unzip_and_cleanup <- function(extractdir) {
     sapply(zipfiles, unlink)
   }
 
-  # Remove .txt suffix
+  # Remove .txt suffix from trader files
   datafiles <- list.files(extractdir, full.names = TRUE)
   sapply(datafiles, FUN = function(txt) {
     file.rename(from = txt, to = sub(pattern = "\\.\\.txt", replacement = "\\.txt", txt))
   })
 
-  # Rename to tsv
+  # Rename trader txt files to to tsv
   datafiles <- list.files(extractdir, full.names = TRUE)
   sapply(datafiles, FUN = function(txt) {
     file.rename(from = txt, to = sub(pattern = "\\.txt", replacement = "\\.tsv", txt))
   })
+
+  # Make all files lower case
+  datafiles <- list.files(extractdir, full.names = TRUE)
+  sapply(datafiles, FUN = function(filename) {
+    file.rename(from = filename, to = tolower(filename))
+  })
+
+  # Fix ~1 for Feb 2009
+  datafiles <- list.files(extractdir, full.names = TRUE)
+  sapply(datafiles, FUN = function(txt) {
+    file.rename(from = txt, to = sub(pattern = "~1", replacement = "0902", txt))
+  })
+
+  # Fix V2 in May/June 2014
+  datafiles <- list.files(extractdir, full.names = TRUE)
+  sapply(datafiles, FUN = function(txt) {
+    file.rename(from = txt, to = sub(pattern = "V2", replacement = "", txt))
+  })
+
 
 }
 
