@@ -18,7 +18,7 @@
 sample_data_arrdisest
 }
 \description{
-A dataset containing a sample of 100 records from an HMRC arrival or dispatch
-estimate download file (SESM16/SESX16).
+A dataset containing a random sample of 100 records from an HMRC arrival or
+dispatch estimate download file (SESM16/SESX16).
 }
 \keyword{datasets}

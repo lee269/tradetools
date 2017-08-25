@@ -3,7 +3,7 @@
 \docType{data}
 \name{sample_data_control}
 \alias{sample_data_control}
-\title{EU import/export estimates data}
+\title{HMRC control file data}
 \format{A data frame with 100 rows and 31 variables:
 \describe{
   \item{comcode}{character}
@@ -45,7 +45,7 @@
 sample_data_control
 }
 \description{
-A dataset containing a sample of 100 records from an HMRC control file
+A dataset containing a random sample of 100 records from an HMRC control file
 (SMKA12).
 }
 \keyword{datasets}

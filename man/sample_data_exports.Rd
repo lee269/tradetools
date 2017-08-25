@@ -37,7 +37,7 @@
 sample_data_exports
 }
 \description{
-A dataset containing a sample of 100 records from an HMRC export download
-file (SMKE19).
+A dataset containing a ramdom sample of 100 records from an HMRC export
+download file (SMKE19).
 }
 \keyword{datasets}

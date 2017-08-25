@@ -116,7 +116,7 @@
 
 
 
-#' EU import/export estimates data
+#' HMRC control file data
 #'
 #' A dataset containing a random sample of 100 records from an HMRC control file
 #' (SMKA12).

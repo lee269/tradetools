@@ -29,7 +29,7 @@
 sample_data_arrdis
 }
 \description{
-A dataset containing a sample of 100 records from an HMRC arrival or dispatch
-download file (SMKM46/SMKX46).
+A dataset containing a random sample of 100 records from an HMRC arrival or
+dispatch download file (SMKM46/SMKX46).
 }
 \keyword{datasets}

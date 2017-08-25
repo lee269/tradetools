@@ -37,7 +37,7 @@
 sample_data_imports
 }
 \description{
-A dataset containing a sample of 100 records from an HMRC import download
-file (SMKI19).
+A dataset containing a random sample of 100 records from an HMRC import
+download file (SMKI19).
 }
 \keyword{datasets}
