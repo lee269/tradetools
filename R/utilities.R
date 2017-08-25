@@ -41,7 +41,7 @@ get_zip_file <- function(url, extractdir) {
 #' ..txt suffixes changed to .tsv. Inconsistent filenames in
 #' February 2009 and May/June 2014 data are fixed.
 #'
-#' @param extractdir folder containing exporter files
+#' @param extractdir folder containing data files
 #'
 #' @return The contents of \code{extractdir} are renamed as appropriate.
 #' Any .zip files in the folder are deleted.

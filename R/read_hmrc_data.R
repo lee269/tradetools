@@ -26,6 +26,14 @@
 read_hmrc_data <- function(file, datatype){
 
 
+# Alternatively, you can use a compact string representation where each
+# character represents one column: c = character, i = integer, n = number, d =
+# double, l = logical, D = date, T = date time, t = time, ? = guess, or _/- to
+# skip the column.
+
+# http://34.250.207.79/rstudio/help/library/readr/doc/column-types.html
+
+
 # Control file spec SMKA12 ------------------------------------------
 # https://www.uktradeinfo.com/Statistics/Documents/Tech_Spec_SMKA12.DOC
 
@@ -139,12 +147,24 @@ read_hmrc_data <- function(file, datatype){
                                      suite_indicator = "c",
                                      sitc = "c",
                                      ip_comcode = "c",
-                                     no_of_consignments = "c",
-                                     stat_value = "c",
-                                     nett_mass = "c",
-                                     supp_unit = "c"
+                                     no_of_consignments = "n",
+                                     stat_value = "n",
+                                     nett_mass = "n",
+                                     supp_unit = "n"
                                      )
 
+
+  # Arrivals/Dispatches estimates file spec --------------------------------------
+  # https://www.uktradeinfo.com/Statistics/Documents/Tech_Spec_SESA16.DOC
+
+  arrdisest_colnames <- c("sitc_2", "sitc_0", "month_ind", "estimated_value")
+
+  arrdisest_colposstart <- c(1, 3, 4, 10)
+  arrdisest_colposend <- c(2, 3, 9, 24)
+  arrdisest_colspec <- readr::cols(sitc_2 = "c",
+                                   sitc_0 = "c",
+                                   month_ind = "c",
+                                   estimated_value = "n")
 
 
 # Import file spec SMKI19 --------------------------------------
@@ -210,9 +230,9 @@ read_hmrc_data <- function(file, datatype){
                                 suite_indicator = "c",
                                 procedure_code = "c",
                                 cb_code = "c",
-                                value = "c",
-                                quantity_1 = "c",
-                                quantity_2 = "c"
+                                value = "n",
+                                quantity_1 = "n",
+                                quantity_2 = "n"
                                 )
 
 
@@ -267,26 +287,10 @@ read_hmrc_data <- function(file, datatype){
                                 golo_alpha = "c",
                                 suite_indicator = "c",
                                 procedure_code = "c",
-                                value = "c",
-                                quantity_1 = "c",
-                                quantitiy_2 = "c",
+                                value = "n",
+                                quantity_1 = "n",
+                                quantitiy_2 = "n",
                                 industrial_plant_comcode = "c")
-
-
-# Dispatches estimates file spec --------------------------------------
-
-  dispest_colnames <- c("t1")
-
-  dispest_colspec <- readr::cols(t1 = "c")
-
-  arrest_colnames <- c("t1")
-
-  arrest_colspec <- readr::cols(t1 = "c")
-
-
-
-# Arrivals extimates file spec -----------------------------------------
-
 
 
 
@@ -299,26 +303,26 @@ read_hmrc_data <- function(file, datatype){
                             "imports" = import_colnames,
                             "dispatches" = arrdis_colnames,
                             "arrivals" = arrdis_colnames,
-                            "dispest" = dispest_colnames,
-                            "arrest" = arrest_colnames)
+                            "dispest" = arrdisest_colnames,
+                            "arrest" = arrdisest_colnames)
 
   output_colposstart <- switch(datatype,
                                "control" = control_colposstart,
                                "exports" = export_colposstart,
                                "imports" = import_colposstart,
                                "dispatches" = arrdis_colposstart,
-                               "arrivals" = arrdis_colnames,
-                               "dispest" = dispest_colnames,
-                               "arrest" = arrest_colnames)
+                               "arrivals" = arrdis_colposstart,
+                               "dispest" = arrdisest_colposstart,
+                               "arrest" = arrdisest_colposstart)
 
   output_colposend <- switch(datatype,
                                "control" = control_colposend,
                                "exports" = export_colposend,
                                "imports" = import_colposend,
                                "dispatches" = arrdis_colposend,
-                               "arrivals" = arrdis_colnames,
-                               "dispest" = dispest_colnames,
-                               "arrest" = arrest_colnames)
+                               "arrivals" = arrdis_colposend,
+                               "dispest" = arrdisest_colposend,
+                               "arrest" = arrdisest_colposend)
 
   output_colspec <- switch(datatype,
                            "control" = control_colspec,
@@ -326,8 +330,8 @@ read_hmrc_data <- function(file, datatype){
                            "imports" = import_colspec,
                            "dispatches" = arrdis_colspec,
                            "arrivals" = arrdis_colspec,
-                           "dispest" = dispest_colspec,
-                           "arrest" = arrest_colspec)
+                           "dispest" = arrdisest_colspec,
+                           "arrest" = arrdisest_colspec)
 
 
 

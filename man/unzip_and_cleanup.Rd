@@ -7,7 +7,7 @@
 unzip_and_cleanup(extractdir)
 }
 \arguments{
-\item{extractdir}{folder containing exporter files}
+\item{extractdir}{folder containing data files}
 }
 \value{
 The contents of \code{extractdir} are renamed as appropriate.
