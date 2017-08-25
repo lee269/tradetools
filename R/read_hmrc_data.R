@@ -19,10 +19,9 @@
 #' @return A data frame of trade data
 #'
 #' @examples
+#' read_hmrc_data("SMKE191607", "exports")
 #'
 #' @export
-#'
-#' @examples
 read_hmrc_data <- function(file, datatype){
 
 

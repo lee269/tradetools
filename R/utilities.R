@@ -123,3 +123,30 @@ safe_names = function(names) {
   names
 
 }
+
+
+
+#' Describe a data frame's columns and data types
+#'
+#' @param dataframe A data frame
+#'
+#' @return A data frame with two columns: col containing the column names, and
+#'   col_types containing the column data types
+#'
+#' @examples
+#'
+#' @importFrom magrittr "%>%"
+#' @export
+describe_table <- function(dataframe) {
+
+  df_types <- data.frame("col_types" = unlist(lapply(dataframe, typeof)))
+  df_types$col <- rownames(df_types)
+  rownames(df_types) <- NULL
+
+  df_types <- df_types %>%
+              dplyr::select(col, col_types)
+
+  return(df_types)
+
+}
+

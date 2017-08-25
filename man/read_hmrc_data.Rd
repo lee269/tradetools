@@ -28,5 +28,6 @@ arrest/dispest \tab SESM16/SESX16 estimates data
 }
 }
 \examples{
+read_hmrc_data("SMKE191607", "exports")
 
 }
