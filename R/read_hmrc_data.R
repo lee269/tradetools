@@ -7,8 +7,8 @@
 #' control \tab SMKA12 \cr
 #' exports \tab SMKE19 \cr
 #' imports \tab SMKI19 \cr
-#' arrivals/dispatches \tab SMKA46 \cr
-#' arrest/dispest \tab **** estimates data
+#' arrivals/dispatches \tab SMKM46/SMKX46 \cr
+#' arrest/dispest \tab SESM16/SESX16 estimates data
 #'}
 #'
 #'
