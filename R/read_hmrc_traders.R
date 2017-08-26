@@ -8,6 +8,7 @@
 #' @return A data frame of trader data in long form
 #'
 #' @examples
+#' test
 #' data <- read_hmrc_traders("traderfile.tsv")
 #' head(data)
 #'
