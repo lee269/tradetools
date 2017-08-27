@@ -5,11 +5,13 @@
 \alias{sample_data_arrdisest}
 \title{EU import/export estimates data}
 \format{A data frame with 100 rows and 4 variables:
-\describe{
-  \item{sitc_2}{character}
-  \item{sitc_0}{character}
-  \item{month_ind}{character}
-  \item{estimated_value}{double}
+
+\tabular{lll}{
+\strong{Name} \tab \strong{Type} \tab \strong{Description}\cr
+sitc_2          \tab character \tab x\cr
+sitc_0          \tab character \tab x\cr
+month_ind       \tab character \tab x\cr
+estimated_value \tab double    \tab x
 }}
 \source{
 \url{http://www.uktradeinfo.com/}

@@ -5,38 +5,39 @@
 \alias{sample_data_control}
 \title{HMRC control file data}
 \format{A data frame with 100 rows and 31 variables:
-\describe{
-  \item{comcode}{character}
-  \item{intra_extra_ind}{character}
-  \item{intra_mm_on}{character}
-  \item{intra_yy_on}{character}
-  \item{intra_mm_off}{character}
-  \item{intra_yy_off}{character}
-  \item{extra_mm_on}{character}
-  \item{extra_yy_on}{character}
-  \item{extra_mm_off}{character}
-  \item{extra_yy_off}{character}
-  \item{non_trade_id}{character}
-  \item{sitc_no}{character}
-  \item{sitc_ind}{character}
-  \item{sitc_conv_a}{character}
-  \item{sitc_conv_b}{character}
-  \item{cn_q2}{character}
-  \item{supp_arrivals}{character}
-  \item{supp_dispatches}{character}
-  \item{supp_imports}{character}
-  \item{supp_exports}{character}
-  \item{sub_group_arr}{character}
-  \item{item_arr}{character}
-  \item{sub_group_disp}{character}
-  \item{item_disp}{character}
-  \item{sub_group_imp}{character}
-  \item{item_imp}{character}
-  \item{sub_group_exp}{character}
-  \item{item_exp}{character}
-  \item{qty1_alpha}{character}
-  \item{qty2_alpha}{character}
-  \item{commodity_alpha}{character}
+\tabular{lll}{
+\strong{Name} \tab \strong{Type} \tab \strong{Description}\cr
+comcode         \tab character \tab x\cr
+intra_extra_ind \tab character \tab x\cr
+intra_mm_on     \tab character \tab x\cr
+intra_yy_on     \tab character \tab x\cr
+intra_mm_off    \tab character \tab x\cr
+intra_yy_off    \tab character \tab x\cr
+extra_mm_on     \tab character \tab x\cr
+extra_yy_on     \tab character \tab x\cr
+extra_mm_off    \tab character \tab x\cr
+extra_yy_off    \tab character \tab x\cr
+non_trade_id    \tab character \tab x\cr
+sitc_no         \tab character \tab x\cr
+sitc_ind        \tab character \tab x\cr
+sitc_conv_a     \tab character \tab x\cr
+sitc_conv_b     \tab character \tab x\cr
+cn_q2           \tab character \tab x\cr
+supp_arrivals   \tab character \tab x\cr
+supp_dispatches \tab character \tab x\cr
+supp_imports    \tab character \tab x\cr
+supp_exports    \tab character \tab x\cr
+sub_group_arr   \tab character \tab x\cr
+item_arr        \tab character \tab x\cr
+sub_group_disp  \tab character \tab x\cr
+item_disp       \tab character \tab x\cr
+sub_group_imp   \tab character \tab x\cr
+item_imp        \tab character \tab x\cr
+sub_group_exp   \tab character \tab x\cr
+item_exp        \tab character \tab x\cr
+qty1_alpha      \tab character \tab x\cr
+qty2_alpha      \tab character \tab x\cr
+commodity_alpha \tab character \tab x
 }}
 \source{
 \url{http://www.uktradeinfo.com/}

@@ -5,22 +5,25 @@
 \alias{sample_data_arrdis}
 \title{EU import/export data}
 \format{A data frame with 100 rows and 17 variables:
-\describe{
-  \item{comcode}{character}
-  \item{record_type}{character}
-  \item{cod_seq}{character}
-  \item{cod_alpha}{character}
-  \item{trade_ind}{character}
-  \item{coo_seq}{character}
-  \item{nature_of_transaction}{character}
-  \item{mode_of_transport}{character}
-  \item{period_reference}{character}
-  \item{suite_indicator}{character}
-  \item{sitc}{character}
-  \item{ip_comcode}{character}
-  \item{stat_value}{double}
-  \item{nett_mass}{double}
-  \item{supp_unit}{double}
+\tabular{lll}{
+\strong{Name} \tab \strong{Type} \tab \strong{Description}\cr
+comcode               \tab character \tab x\cr
+record_type           \tab character \tab x\cr
+cod_seq               \tab character \tab x\cr
+cod_alpha             \tab character \tab x\cr
+trade_ind             \tab character \tab x\cr
+coo_seq               \tab character \tab x\cr
+coo_alpha             \tab character \tab x\cr
+nature_of_transaction \tab character \tab x\cr
+mode_of_transport     \tab character \tab x\cr
+period_reference      \tab character \tab x\cr
+suite_indicator       \tab character \tab x\cr
+sitc                  \tab character \tab x\cr
+ip_comcode            \tab character \tab x\cr
+no_of_consignments    \tab double    \tab x\cr
+stat_value            \tab double    \tab x\cr
+nett_mass             \tab double    \tab x\cr
+supp_unit             \tab double    \tab x
 }}
 \source{
 \url{http://www.uktradeinfo.com/}

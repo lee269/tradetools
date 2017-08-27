@@ -5,31 +5,73 @@
 \alias{sample_data_exports}
 \title{Non-EU exports data}
 \format{A data frame with 100 rows and 23 variables:
-\describe{
-  \item{comcode}{character}
-  \item{sitc}{character}
-  \item{record_type}{character}
-  \item{cod_seq}{character}
-  \item{cod_alpha}{character}
-  \item{account_mm}{character}
-  \item{account_ccyy}{character}
-  \item{port_seq}{character}
-  \item{port_alpha}{character}
-  \item{flag_seq}{character}
-  \item{flag_alpha}{character}
-  \item{trade_ind}{character}
-  \item{container}{character}
-  \item{mode_of_transport}{character}
-  \item{inland_mot}{character}
-  \item{golo_seq}{character}
-  \item{golo_alpha}{character}
-  \item{suite_indicator}{character}
-  \item{procedure_code}{character}
-  \item{value}{double}
-  \item{quantity_1}{double}
-  \item{quantitiy_2}{double}
-  \item{industrial_plant_comcode}{character}
-}}
+
+\tabular{lll}{
+\strong{Name} \tab \strong{Type} \tab \strong{Description}\cr
+comcode                  \tab character \tab 8 digit commodity code\cr
+sitc                     \tab character \tab SITC code\cr
+record_type              \tab character \tab Range 0-3 identifies the kind of
+suppression record\cr
+
+cod_seq                  \tab character \tab Numeric sequence for Country of
+Destination\cr
+
+cod_alpha                \tab character \tab Alpha code for Counry of
+Destination\cr
+
+account_mm               \tab character \tab Identifies the month of account
+of an item in format MM. For non-amendment records this will be the same as
+the file month; for amendment records it will be the month to which the
+amendment relates.\cr
+
+account_ccyy             \tab character \tab Identifies the century and year
+of an item in format CCYY. For non-amendment records this will be the same as
+the file month; for amendment records it will be the year to which the
+amendment relates.\cr
+
+port_seq                 \tab character \tab Numeric code for port of export\cr
+port_alpha               \tab character \tab Alpha code for port of export\cr
+flag_seq                 \tab character \tab Numeric sequence for the flag
+(nationality) of the ship. Zero for Trade Indicator ‘5’ items.\cr
+
+flag_alpha               \tab character \tab Numeric sequence for the flag
+(nationality) of the ship. Zero for Trade Indicator ‘5’ items.\cr
+
+trade_ind                \tab character \tab A code used to identify the type
+of trade.\cr
+
+container                \tab character \tab Code identifying goods
+transported by container: 0 = not in container, 1 = in container\cr
+
+mode_of_transport        \tab character \tab Mode of transport by which goods
+leave or arrive in the UK\cr
+
+inland_mot               \tab character \tab Optional code identifying the
+mode of transport where there has been an ‘internal’ movement within the
+Community before goods have been subject to Customs formalities\cr
+
+golo_seq                 \tab character \tab Numeric sequence for Location
+alpha (golo_alpha)\cr
+
+golo_alpha               \tab character \tab Alpha code indicating location
+of inland clearance (inland clearance depot or inland rail depot) if goods
+were not cleared at the border. Also used to indicate relevant free zone
+location for goods entering or leaving freezone.\cr
+
+suite_indicator          \tab character \tab Identifies commodity codes to be
+excluded from General and Special trade compilations\cr
+
+procedure_code           \tab character \tab This identifies specific types
+of Customs Procedure\cr
+
+value                    \tab double    \tab Value (£)\cr
+quantity_1               \tab double    \tab Quantity\cr
+quantitiy_2              \tab double    \tab Quantity (alternate measure)\cr
+industrial_plant_comcode \tab character \tab With effect from January 2011, a
+pseudo concessionary comcode beginning 98 used for declaration of high value
+Industrial Plant.
+
+#' }}
 \source{
 \url{http://www.uktradeinfo.com/}
 }
