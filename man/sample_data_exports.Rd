@@ -71,7 +71,7 @@ industrial_plant_comcode \tab character \tab With effect from January 2011, a
 pseudo concessionary comcode beginning 98 used for declaration of high value
 Industrial Plant.
 
-#' }}
+}}
 \source{
 \url{http://www.uktradeinfo.com/}
 }

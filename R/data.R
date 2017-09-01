@@ -165,23 +165,39 @@
 #' @format A data frame with 100 rows and 17 variables:
 #' \tabular{lll}{
 #' \strong{Name} \tab \strong{Type} \tab \strong{Description}\cr
-#' comcode               \tab character \tab x\cr
-#' record_type           \tab character \tab x\cr
-#' cod_seq               \tab character \tab x\cr
-#' cod_alpha             \tab character \tab x\cr
-#' trade_ind             \tab character \tab x\cr
-#' coo_seq               \tab character \tab x\cr
-#' coo_alpha             \tab character \tab x\cr
-#' nature_of_transaction \tab character \tab x\cr
-#' mode_of_transport     \tab character \tab x\cr
-#' period_reference      \tab character \tab x\cr
-#' suite_indicator       \tab character \tab x\cr
-#' sitc                  \tab character \tab x\cr
-#' ip_comcode            \tab character \tab x\cr
-#' no_of_consignments    \tab double    \tab x\cr
-#' stat_value            \tab double    \tab x\cr
-#' nett_mass             \tab double    \tab x\cr
-#' supp_unit             \tab double    \tab x
+#' comcode               \tab character \tab 8 digit commodity code\cr
+#' record_type              \tab character \tab Range 0-3 identifies the kind of
+#' suppression record\cr
+#' cod_seq                  \tab character \tab Numeric sequence for Country of
+#' Dispatch\cr
+#' cod_alpha                \tab character \tab Alpha code for Country of
+#' Dispatch\cr
+#' trade_ind                \tab character \tab A code used to identify the type
+#' of trade.\cr
+#' coo_seq               \tab character \tab Numeric sequence for Country of
+#' Origin\cr
+#' coo_alpha             \tab character \tab Alpha code for Country of Origin\cr
+#' nature_of_transaction \tab character \tab Code describing the type of
+#' transaction\cr
+#' mode_of_transport     \tab character \tab Mode of transport by which goods
+#' leave or arrive in the UK\cr
+#' period_reference      \tab character \tab Identifies the month of account of
+#' an item in format 0YYYYMM. For non-amendment records this will be the same as
+#' the file month; for amendment records and late supplementary declarations it
+#' will be the month to which the amendment or supplementary declaration
+#' relates.\cr
+#' suite_indicator          \tab character \tab Identifies commodity codes to be
+#' excluded from General and Special trade compilations\cr
+#' sitc                  \tab character \tab SITC code\cr
+#' industrial_plant_comcode \tab character \tab With effect from January 2011, a
+#' pseudo concessionary comcode beginning 98 used for declaration of high value
+#' Industrial Plant.\cr
+#' no_of_consignments    \tab double    \tab Optional field used to indicate the
+#' number of consignments. Please note that several consignments may be
+#' aggregated.\cr
+#' stat_value            \tab double    \tab Value(£)\cr
+#' nett_mass             \tab double    \tab Weight in kg\cr
+#' supp_unit             \tab double    \tab Alternative quantity
 #' }
 #'
 #' @source \url{http://www.uktradeinfo.com/}
@@ -199,10 +215,10 @@
 #'
 #' \tabular{lll}{
 #' \strong{Name} \tab \strong{Type} \tab \strong{Description}\cr
-#' sitc_2          \tab character \tab x\cr
-#' sitc_0          \tab character \tab x\cr
-#' month_ind       \tab character \tab x\cr
-#' estimated_value \tab double    \tab x
+#' sitc_2          \tab character \tab 2 digit SITC code\cr
+#' sitc_0          \tab character \tab SITC zero field - value set to 0\cr
+#' month_ind       \tab character \tab Month\cr
+#' estimated_value \tab double    \tab Estimated value
 #' }
 #'
 #'
@@ -219,7 +235,7 @@
 #' @format A data frame with 100 rows and 31 variables:
 #' \tabular{lll}{
 #' \strong{Name} \tab \strong{Type} \tab \strong{Description}\cr
-#' comcode         \tab character \tab x\cr
+#' comcode         \tab character \tab 8 digit commodity code\cr
 #' intra_extra_ind \tab character \tab x\cr
 #' intra_mm_on     \tab character \tab x\cr
 #' intra_yy_on     \tab character \tab x\cr
@@ -230,7 +246,7 @@
 #' extra_mm_off    \tab character \tab x\cr
 #' extra_yy_off    \tab character \tab x\cr
 #' non_trade_id    \tab character \tab x\cr
-#' sitc_no         \tab character \tab x\cr
+#' sitc_no         \tab character \tab 5 digit SITC code\cr
 #' sitc_ind        \tab character \tab x\cr
 #' sitc_conv_a     \tab character \tab x\cr
 #' sitc_conv_b     \tab character \tab x\cr
@@ -247,9 +263,9 @@
 #' item_imp        \tab character \tab x\cr
 #' sub_group_exp   \tab character \tab x\cr
 #' item_exp        \tab character \tab x\cr
-#' qty1_alpha      \tab character \tab x\cr
-#' qty2_alpha      \tab character \tab x\cr
-#' commodity_alpha \tab character \tab x
+#' qty1_alpha      \tab character \tab Quantity unit\cr
+#' qty2_alpha      \tab character \tab Supplementary unit\cr
+#' commodity_alpha \tab character \tab Commodity description
 #' }
 #'
 #' @source \url{http://www.uktradeinfo.com/}

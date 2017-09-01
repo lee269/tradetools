@@ -7,7 +7,7 @@
 \format{A data frame with 100 rows and 31 variables:
 \tabular{lll}{
 \strong{Name} \tab \strong{Type} \tab \strong{Description}\cr
-comcode         \tab character \tab x\cr
+comcode         \tab character \tab 8 digit commodity code\cr
 intra_extra_ind \tab character \tab x\cr
 intra_mm_on     \tab character \tab x\cr
 intra_yy_on     \tab character \tab x\cr
@@ -18,7 +18,7 @@ extra_yy_on     \tab character \tab x\cr
 extra_mm_off    \tab character \tab x\cr
 extra_yy_off    \tab character \tab x\cr
 non_trade_id    \tab character \tab x\cr
-sitc_no         \tab character \tab x\cr
+sitc_no         \tab character \tab 5 digit SITC code\cr
 sitc_ind        \tab character \tab x\cr
 sitc_conv_a     \tab character \tab x\cr
 sitc_conv_b     \tab character \tab x\cr
@@ -35,9 +35,9 @@ sub_group_imp   \tab character \tab x\cr
 item_imp        \tab character \tab x\cr
 sub_group_exp   \tab character \tab x\cr
 item_exp        \tab character \tab x\cr
-qty1_alpha      \tab character \tab x\cr
-qty2_alpha      \tab character \tab x\cr
-commodity_alpha \tab character \tab x
+qty1_alpha      \tab character \tab Quantity unit\cr
+qty2_alpha      \tab character \tab Supplementary unit\cr
+commodity_alpha \tab character \tab Commodity description
 }}
 \source{
 \url{http://www.uktradeinfo.com/}
